@@ -1,0 +1,14 @@
+.event-container {
+
+  .event {
+    border-left: 1px solid #0e548d;
+    background-color: #95c2e7;
+    &-preview{
+      width: 100%;
+    }
+    &-details{
+      z-index: 1;
+      white-space: nowrap;
+    }
+  }
+}

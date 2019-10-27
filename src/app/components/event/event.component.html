@@ -1,0 +1,40 @@
+<section class="event-container position-relative">
+  <ng-container *ngTemplateOutlet="eventView"></ng-container>
+</section>
+
+<!-- Templates -->
+
+<ng-template #eventPreview>
+  <div class="event event-preview position-absolute" [style.top.px]="" [style.height.px]="parentHeight*timeInterval" (mouseenter)="showDetails()">
+    <h5> {{event.abbreviation}} </h5>
+  </div>
+</ng-template>
+
+<ng-template #eventDetails>
+  <div class="event event-details position-absolute" (mouseleave)="showPreview()">
+    <h5> {{event.name}} </h5>
+    <div class="container">
+      <div class="d-flex">
+        <time class="col event-time">{{event.starts.hour}} : {{event.starts.minutes}} - {{event.ends.hour}} : {{event.ends.minutes? event.ends.minutes : '00'  }}</time>
+        <address class="col event-author"><a href=""> {{event.teacher}} </a></address>
+      </div>
+    </div>
+    <div class="event-attachments-container">
+      <ng-container
+        *ngTemplateOutlet="attachments;context:event">
+      </ng-container>
+      <ng-container *ngIf="event.lecture">
+        <h6><span>{{event.lecture.nr}}</span>{{event.lecture.title}}</h6>
+        <ng-container
+          *ngTemplateOutlet="attachments;context:event.lecture">
+        </ng-container>
+      </ng-container>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #attachments let-attachments="attachments">
+  <ul class="event-attachment">
+    <li *ngFor="let file of attachments"><a [href]="file.link" [download]="file.name" target="_blank">{{file.name}}</a></li>
+  </ul>
+</ng-template>

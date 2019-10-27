@@ -1,0 +1,11 @@
+{
+    "user": {
+        "id": 123456,
+        "firstName": "Emilia",
+        "lastName": "Chiroiu",
+        "year": 1,
+        "type": "student",
+        "optionals": [],
+    },
+    "schedule":
+}

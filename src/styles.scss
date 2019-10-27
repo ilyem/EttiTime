@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+
+$lightGreen: #95cfa2;
+$darkGreen: #31ca52;
+
+.lightGreen {
+    background-color: $lightGreen;
+}
+
+.darkGreen {
+    background-color: $darkGreen;
+}
