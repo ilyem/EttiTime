@@ -4,13 +4,13 @@
 
 <!-- Templates -->
 
-<ng-template #eventPreview>
-  <div class="event event-preview position-absolute" [style.top.px]="" [style.height.px]="parentHeight*timeInterval" (mouseenter)="showDetails()">
+<ng-template #preview>
+  <div class="event event-preview position-absolute" [style.top.px]="event.starts.minutes? parentHeight*event.starts.minutes/60: 0" [style.height.px]="parentHeight*timeInterval" (mouseenter)="showDetails()">
     <h5> {{event.abbreviation}} </h5>
   </div>
 </ng-template>
 
-<ng-template #eventDetails>
+<ng-template #details>
   <div class="event event-details position-absolute" (mouseleave)="showPreview()">
     <h5> {{event.name}} </h5>
     <div class="container">

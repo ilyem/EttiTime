@@ -11,8 +11,8 @@ export class EventComponent implements OnInit {
   // showDetails: boolean = false;
   @Input() parentHeight: number;
   @Input() event: Event;
-  @ViewChild('eventPreview') preview: TemplateRef<any>;
-  @ViewChild('eventDetails') details: TemplateRef<any>;
+  @ViewChild('preview') preview: TemplateRef<any>;
+  @ViewChild('details') details: TemplateRef<any>;
   eventView: TemplateRef<any>;
   timeInterval: number;
 
@@ -21,14 +21,14 @@ export class EventComponent implements OnInit {
 
   ngOnInit() {
     this.timeInterval = this.utilsService.getTimeInterval(this.event.starts, this.event.ends);
-    // this.showPreview();
-    this.showDetails();
+    this.showPreview();
+    //this.showDetails();
   }
   showDetails() {
     this.eventView = this.details;
   }
   showPreview() {
-    // this.eventView = this.preview;
+   this.eventView = this.preview;
   }
 
 

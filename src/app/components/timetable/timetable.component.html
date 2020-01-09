@@ -21,8 +21,8 @@
           </div>
         </th>
         <td *ngFor="let day of days">
-          <ng-container *ngIf="timeEvents[day] && timeEvents[day][hour] && timeEvents[day][hour].length">
-            <app-event *ngFor="let event of timeEvents[day][hour]" [event]="event" [parentHeight]="rowHeight">
+          <ng-container *ngIf="orderedEvents[day] && orderedEvents[day][hour] && orderedEvents[day][hour].length">
+            <app-event *ngFor="let event of orderedEvents[day][hour]" [event]="event" [parentHeight]="rowHeight">
             </app-event>
           </ng-container>
         </td>
@@ -46,3 +46,6 @@
     </div>
   </section>
 </div> -->
+<div class="stacks">
+  <app-event-stack *ngFor="let day of days"></app-event-stack>
+</div>
