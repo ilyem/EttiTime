@@ -1,6 +1,6 @@
 import { Component, OnInit} from '@angular/core';
 import { Event } from 'src/app/models/event';
-
+import { UtilsService } from '../../services/utils.service';
 
 @Component({
   selector: 'app-event-stack',
@@ -15,6 +15,7 @@ export class EventStackComponent implements OnInit {
       abbreviation: "SDA",
       type: 'course',
       teacher: "M. Ionescu",
+      classroom: "B313",
       day: "Monday",
       starts: { hour: 8, minutes: 30 },
       ends: { hour: 10, minutes: 0 },
@@ -25,10 +26,14 @@ export class EventStackComponent implements OnInit {
       abbreviation: "TC",
       type: 'course',
       teacher: "M. Ionescu",
+      classroom: "B313",
       day: "Friday",
       starts: { hour: 8, minutes: 30 },
       ends: { hour: 10, minutes: 30 },
       attachments: [],
+      exam: {
+        attachments: [],
+      }
     },
     {
       name: "Măsurări în Electronică și Telecomunicații",
@@ -80,8 +85,9 @@ export class EventStackComponent implements OnInit {
       attachments: [],
     }
   ]
+  date: Date = new Date();
 
-  constructor() {
+  constructor( public utils: UtilsService ) {
   }
 
   ngOnInit() {

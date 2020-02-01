@@ -4,6 +4,10 @@
 $lightGreen: #95cfa2;
 $darkGreen: #31ca52;
 
+html, body {
+  height: 100%;
+}
+
 .lightGreen {
     background-color: $lightGreen;
 }

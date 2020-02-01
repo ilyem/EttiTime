@@ -1,5 +1,5 @@
 <div class="stack">
-  <ul class="time">
+  <ul class="stack__list">
     <li>
       8:00
     </li>
@@ -30,49 +30,16 @@
   </ul>
   <div class="container">
     <header class="header">
-      <span class="header__heading">Monday</span>
-      <span class="header__heading header__heading_grey">17.12.2020</span>
+      <span class="header__heading">{{date | date: 'EEEE'}}</span>
+      <span class="header__heading header__heading_grey">{{date | date: 'dd.MM.y'}}</span>
     </header>
-    <ul class="list">
-      <li class="list__item">
-        <div class="info">
-          <h3 class="info__title">Structuri de Date si Algoritmi</h3>
-          <p class="info__author">M. Ionescu</p>
-          <div class="info__tags">
-            <span>type</span> <span>classroom</span>
-          </div>
-        </div>
-        <div class="attachments">
-          <img class="attachments__icon" src="https://image.flaticon.com/icons/png/512/351/351485.png" alt="">
-        </div>
-      </li>
-      <li class="list__gap">
-        <p>1.5H GAP</p>
-      </li>
-      <li class="list__item">
-        <div class="info">
-          <h2 class="info__title">Structuri de Date si Algoritmi</h2>
-          <p class="info__author">M. Ionescu</p>
-          <div class="info__tags">
-            <span>type</span> <span>classroom</span>
-          </div>
-        </div>
-        <div class="attachments">
-          <img class="attachments__icon" src="https://image.flaticon.com/icons/png/512/351/351485.png" alt="">
-        </div>
-      </li>
-      <li class="list__item">
-        <div class="info">
-          <h2 class="info__title">Structuri de Date si Algoritmi</h2>
-          <p class="info__author">M. Ionescu</p>
-          <div class="info__tags">
-            <span>type</span> <span>classroom</span>
-          </div>
-        </div>
-        <div class="attachments">
-          <img class="attachments__icon" src="https://image.flaticon.com/icons/png/512/351/351485.png" alt="">
-        </div>
-      </li>
+    <ul class="container__list">
+<ng-container *ngFor="let event of events; index as i">
+  <app-event  [event]="event"></app-event>
+  <li *ngIf="i+1 < events.length && utils.getTimeInterval(event.starts, events[i+1].ends)" class="list__gap">
+    <p>{{utils.getTimeInterval(event.starts, events[i].ends)}}H GAP</p>
+  </li>
+</ng-container>
     </ul>
   </div>
 </div>

@@ -86,6 +86,9 @@ export class TimetableComponent implements OnInit {
   windowWidth: number;
   breakPoint = BreakPoint;
   rowHeight = 25;
+  date: Date= new Date();
+
+
   @ViewChild('scheduleHeader') scheduleHeader;
   @HostListener('window:resize')
   onResize() {

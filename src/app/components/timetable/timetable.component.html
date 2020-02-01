@@ -1,51 +1,10 @@
-<div class=" container table-container">
-  <table #timeTable class="table table-sm">
-    <thead>
-      <tr>
-        <th scope="col"></th>
-        <th scope="col" *ngFor="let day of days" class="text-center">
-          <span>
-              {{ windowWidth > breakPoint.SM ?  (windowWidth > breakPoint.MD ? day : day | slice:0:3) : day | slice:0:2}}
-          </span>
-        </th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let hour of hours">
-        <th scope="row">
-          <div class="hour-container position-relative">
-            <span class="devider position-absolute" [style.width.px]="timeTable.offsetWidth"></span>
-            <div class="hour font-weight-normal">
-              {{hour}}
-            </div>
-          </div>
-        </th>
-        <td *ngFor="let day of days">
-          <ng-container *ngIf="orderedEvents[day] && orderedEvents[day][hour] && orderedEvents[day][hour].length">
-            <app-event *ngFor="let event of orderedEvents[day][hour]" [event]="event" [parentHeight]="rowHeight">
-            </app-event>
-          </ng-container>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+
+<div class="weekSelection">
+  <img class="arrowLeft"src="" alt="">
+<span>{{date | date: 'dd.MM.y'}}</span>
+<span>{{date | date: 'dd.MM.y'}}</span>
+  <img class="arrowRight"src="" alt="">
 </div>
-<!-- <div class="container weekSchedule">
-  <div #scheduleHeader class="row row-schedule">
-    <div *ngFor="let header of headers" [id]="header" class="col text-center">{{header}}</div>
-  </div>
-  <section #scheduleBody>
-    <div *ngFor="let hour of hours" class="row">
-      <span>{{hour}}</span>
-    </div>
-    <div class="event" *ngFor="let event of events; let even = even" [ngClass]="even? 'lightGreen':'darkGreen'"
-      [style.top.px]="(event.duration.start.hour - hours[0] + event.duration.start.minutes/60)*scheduleHeader.offsetHeight "
-      [style.width.px]="scheduleHeader.offsetWidth/7"
-      [style.height.px]="getTimeInterval(event.duration.start, event.duration.end) * scheduleHeader.offsetHeight">
-      <h6>{{event.name}}</h6>
-    </div>
-  </section>
-</div> -->
 <div class="stacks">
   <app-event-stack *ngFor="let day of days"></app-event-stack>
 </div>

@@ -5,9 +5,8 @@
         "ng": "ng",
         "start": "ng serve",
         "build": "ng build",
-        "test": "ng test",
-        "lint": "ng lint",
-        "e2e": "ng e2e"
+        "serve": "node src/server/index.js"
+
     },
     "private": true,
     "dependencies": {
@@ -19,16 +18,21 @@
         "@angular/platform-browser": "~7.1.0",
         "@angular/platform-browser-dynamic": "~7.1.0",
         "@angular/router": "~7.1.0",
+        "body-parser": "^1.19.0",
         "bootstrap": "^4.3.1",
         "core-js": "^2.5.4",
         "jquery": "^3.4.1",
+        "mongodb": "^3.5.2",
+        "mongoose": "^5.8.10",
+        "node": "^13.6.0",
+        "node-sass": "^4.13.1",
         "popper": "^1.0.1",
         "rxjs": "~6.3.3",
         "tslib": "^1.9.0",
         "zone.js": "~0.8.26"
     },
     "devDependencies": {
-        "@angular-devkit/build-angular": "~0.11.0",
+        "@angular-devkit/build-angular": "^0.12.4",
         "@angular/cli": "~7.1.4",
         "@angular/compiler-cli": "~7.1.0",
         "@angular/language-service": "~7.1.0",

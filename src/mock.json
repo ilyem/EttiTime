@@ -4,8 +4,13 @@
         "firstName": "Emilia",
         "lastName": "Chiroiu",
         "year": 1,
+        "class": "A",
+        "group":  "414Ba",
         "type": "student",
-        "optionals": [],
+        "optionals": []
     },
-    "schedule":
+    "schedule": {
+
+    }
 }
+
