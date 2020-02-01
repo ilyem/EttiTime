@@ -21,6 +21,8 @@ router.route('/users/:user_id')
     .put(userController.update)
     .delete(userController.delete);
 
+router.route('/users/login')
+    .post(userController.log);
 
 // Export API routes
 module.exports = router;

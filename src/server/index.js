@@ -1,3 +1,5 @@
+// Import environment variables
+require("dotenv").config();
 // Import express
 let express = require('express');
 // Import Body parser
@@ -6,7 +8,6 @@ let bodyParser = require('body-parser');
 let mongoose = require('mongoose');
 // Initialize the app
 let app = express();
-
 // Import routes
 let apiRoutes = require("./api-routes");
 // Configure bodyparser to handle post requests
@@ -19,13 +20,9 @@ const uri = 'mongodb://em:em@mycluster-shard-00-00-4vu9n.gcp.mongodb.net:27017,m
 
 mongoose.connect(uri, { useNewUrlParser: true});
 
-// Heroku Mongoose connection
-// mongoose.connect('mongodb://heroku_5686p02g:sia8l3fni4jmu7qbn0ac1t75mf@ds349857.mlab.com:49857/heroku_5686p02g', { useNewUrlParser: true });
-
 var db = mongoose.connection;
 
 // Added check for DB connection
-
 if(!db)
     console.log("Error connecting db")
 else
