@@ -98,7 +98,6 @@ export class TimetableComponent implements OnInit {
   constructor() {
     this.days = Object.keys(WeekDays).slice(Object.keys(WeekDays).length / 2);
     this.orderedEvents = this.eventsOrderedByTime(this.events);
-    console.log(this.orderedEvents);
   }
 
   ngOnInit() {

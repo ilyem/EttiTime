@@ -22,7 +22,6 @@ export class EventComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log(this.event);
     this.attachments = this.event.lecture ? [...this.event.lecture.attachments, ...this.event.attachments] : this.event.attachments;
     // this.timeInterval = this.utilsService.getTimeInterval(this.event.starts, this.event.ends);
     // this.showPreview();

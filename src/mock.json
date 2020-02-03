@@ -3,14 +3,10 @@
         "id": 123456,
         "firstName": "Emilia",
         "lastName": "Chiroiu",
+        "type" :"student",
         "year": 1,
         "class": "A",
-        "group":  "414Ba",
-        "type": "student",
-        "optionals": []
-    },
-    "schedule": {
-
+        "group":  "414Ba"
     }
 }
 

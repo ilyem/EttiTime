@@ -82,7 +82,7 @@ exports.delete = function (req, res) {
   });
 };
  //Login a registered user
-exports.log = async (req, res) => {
+exports.login = async (req, res) => {
   try {
       const { email, password } = req.body
       const user = await User.findByCredentials(email, password)
@@ -96,4 +96,13 @@ exports.log = async (req, res) => {
   }
 
 };
-
+//Logout a registered user
+exports.logout = async (req, res) => {
+  try {
+      req.user.token = undefined
+      await req.user.save()
+      res.send("Successful logout!")
+  } catch (error) {
+      res.status(500).send()
+  }
+};

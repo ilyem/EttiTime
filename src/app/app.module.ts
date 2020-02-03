@@ -2,6 +2,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule }   from '@angular/forms';
+import { HttpClientModule }    from '@angular/common/http';
 
 // Components
 import { AppRoutingModule } from './app-routing.module';
@@ -16,6 +17,7 @@ import { EventComponent } from './components/event/event.component';
 import { EventStackComponent } from './components/eventStack/event-stack.component';
 import { LoginComponent } from './pages/login/login.component';
 import {LoginFormComponent } from './components/login-form/login-form.component';
+import { AuthenticationService } from './services/authentication.service';
 @NgModule({
     declarations: [
         AppComponent,
@@ -32,10 +34,11 @@ import {LoginFormComponent } from './components/login-form/login-form.component'
     ],
     imports: [
         BrowserModule,
+        HttpClientModule,
         AppRoutingModule,
         FormsModule
     ],
-    providers: [],
+    providers: [AuthenticationService],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

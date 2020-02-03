@@ -1,8 +1,8 @@
 // userModel.js
 var mongoose = require('mongoose');
 var utils = require('../utils');
-const jwt = require('jsonwebtoken')
-
+var jwt = require('jsonwebtoken')
+var options = {discriminatorKey: 'type'};
 // Setup schema
 var userSchema = mongoose.Schema({
   name: {
@@ -18,25 +18,20 @@ var userSchema = mongoose.Schema({
     type: String,
     required: true
   },
-  gender: String,
-  phone: String,
-  create_date: {
-    type: Date,
-    default: Date.now
+  token: {
+    type: String,
   }
-});
+}, options);
 
 
 //Find user by email
 userSchema.statics.findByCredentials = async (email, password) => {
   // Search for a user by email and password.
   const user = await User.findOne({ email });
-  console.log(user);
   if (!user) {
     throw Error('Invalid login credentials')
   }
   const cryptPassword = utils.crypt(password);
-  console.log(cryptPassword);
   if ( cryptPassword !== user.password) {
     throw Error('Invalid login credentials' )
   }
@@ -47,6 +42,7 @@ userSchema.methods.generateAuthToken = async function() {
   // Generate an auth token for the user
   const user = this
   const token = jwt.sign({_id: user._id}, process.env.JWT_KEY)
+  user.token = token;
   await user.save()
   return token
 }

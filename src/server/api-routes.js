@@ -1,6 +1,8 @@
 // api-routes.js
 // Initialize express router
 let router = require('express').Router();
+const authenticate  = require('./middleware/auth')
+
 // Set default API response
 router.get('/', function (req, res) {
     res.json({
@@ -22,7 +24,10 @@ router.route('/users/:user_id')
     .delete(userController.delete);
 
 router.route('/users/login')
-    .post(userController.log);
+    .post(userController.login);
+
+    router.route('/users/logout')
+    .post(authenticate, userController.logout);
 
 // Export API routes
 module.exports = router;

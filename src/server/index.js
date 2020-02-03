@@ -10,6 +10,7 @@ let mongoose = require('mongoose');
 let app = express();
 // Import routes
 let apiRoutes = require("./api-routes");
+const permittedCrossDomainPolicies = require('helmet-crossdomain')
 // Configure bodyparser to handle post requests
 app.use(bodyParser.urlencoded({
     extended: true
@@ -29,14 +30,16 @@ else
     console.log("Db connected successfully")
 
 // Setup server port
-var port = process.env.PORT || 8080;
+var port = process.env.PORT || 3000;
+
+app.use(permittedCrossDomainPolicies({ permittedPolicies: 'all' }))
 
 // Send message for default URL
-app.get('/', (req, res) => res.send('Hello World with Express'));
+app.get('/', (req, res) => res.send('Hello timetable'));
 
 // Use Api routes in the App
 app.use('/api', apiRoutes);
 // Launch app to listen to specified port
 app.listen(port, function () {
-    console.log("Running RestHub on port " + port);
+    console.log("Running on port " + port);
 });
