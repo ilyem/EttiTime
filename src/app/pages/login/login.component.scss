@@ -1,0 +1,10 @@
+.login{
+  &__container {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    .greeting, .login{
+      flex: 1 0 auto;
+    }
+  }
+}

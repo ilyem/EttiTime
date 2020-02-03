@@ -3,9 +3,10 @@
         "id": 123456,
         "firstName": "Emilia",
         "lastName": "Chiroiu",
+        "type" :"student",
         "year": 1,
-        "type": "student",
-        "optionals": [],
-    },
-    "schedule":
+        "class": "A",
+        "group":  "414Ba"
+    }
 }
+

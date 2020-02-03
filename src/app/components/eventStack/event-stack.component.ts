@@ -1,15 +1,13 @@
-import { Component, OnInit, ViewChild, HostListener } from '@angular/core';
-import { WeekDays } from 'src/app/models/date';
-import { BreakPoint } from 'src/app/models/responsive';
+import { Component, OnInit} from '@angular/core';
 import { Event } from 'src/app/models/event';
+import { UtilsService } from '../../services/utils.service';
 
 @Component({
-  selector: 'app-timetable',
-  templateUrl: './timetable.component.html',
-  styleUrls: ['./timetable.component.scss']
+  selector: 'app-event-stack',
+  templateUrl: './event-stack.component.html',
+  styleUrls: ['./event-stack.component.scss']
 })
-export class TimetableComponent implements OnInit {
-  days: string[];
+export class EventStackComponent implements OnInit {
   hours: number[] = [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21]
   events: Event[] = [
     {
@@ -17,6 +15,7 @@ export class TimetableComponent implements OnInit {
       abbreviation: "SDA",
       type: 'course',
       teacher: "M. Ionescu",
+      classroom: "B313",
       day: "Monday",
       starts: { hour: 8, minutes: 30 },
       ends: { hour: 10, minutes: 0 },
@@ -27,10 +26,14 @@ export class TimetableComponent implements OnInit {
       abbreviation: "TC",
       type: 'course',
       teacher: "M. Ionescu",
+      classroom: "B313",
       day: "Friday",
       starts: { hour: 8, minutes: 30 },
       ends: { hour: 10, minutes: 30 },
       attachments: [],
+      exam: {
+        attachments: [],
+      }
     },
     {
       name: "Măsurări în Electronică și Telecomunicații",
@@ -82,44 +85,11 @@ export class TimetableComponent implements OnInit {
       attachments: [],
     }
   ]
-  orderedEvents: any;
-  windowWidth: number;
-  breakPoint = BreakPoint;
-  rowHeight = 25;
-  date: Date= new Date();
+  date: Date = new Date();
 
-
-  @ViewChild('scheduleHeader') scheduleHeader;
-  @HostListener('window:resize')
-  onResize() {
-    this.windowWidth = window.innerWidth;
-  }
-
-  constructor() {
-    this.days = Object.keys(WeekDays).slice(Object.keys(WeekDays).length / 2);
-    this.orderedEvents = this.eventsOrderedByTime(this.events);
+  constructor( public utils: UtilsService ) {
   }
 
   ngOnInit() {
-    this.windowWidth = window.innerWidth;
-    // TODO get current week events
   }
-
-  // getTimeInterval(startTime, endTime) {
-  //   return (endTime.hour * 60 + endTime.minutes - startTime.hour * 60 - startTime.minutes) / 60
-  // }
-
-  eventsOrderedByTime(events) {
-    let orderedEvents = {};
-    events.map(event => {
-      const startHour = event.starts.hour;
-      if (orderedEvents[event.day] === undefined) {
-        orderedEvents[event.day] = {};
-      }
-      orderedEvents[event.day][startHour] = orderedEvents[event.day][startHour] ?
-        [...orderedEvents[event.day][startHour], event] : [event];
-    })
-    return orderedEvents;
-  }
-
 }
