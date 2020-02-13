@@ -1,0 +1,24 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  margin-bottom: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 10px 35px rgb(193, 198, 200);
+  &__logo {
+    height: 30px;
+    width: 30px;
+  }
+
+  &__user {
+    display: flex;
+    align-items: center;
+
+    &__icon {}
+
+    &__greeting {
+      margin-bottom: 0;
+      margin-right: 10px;
+    }
+  }
+}

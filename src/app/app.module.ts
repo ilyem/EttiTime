@@ -18,6 +18,8 @@ import { EventStackComponent } from './components/eventStack/event-stack.compone
 import { LoginComponent } from './pages/login/login.component';
 import {LoginFormComponent } from './components/login-form/login-form.component';
 import { AuthenticationService } from './services/authentication.service';
+import { DateSelectionComponent } from './components/date-selection/date-selection.component';
+import { CalendarComponent } from './components/calendar/calendar.component';
 @NgModule({
     declarations: [
         AppComponent,
@@ -30,7 +32,9 @@ import { AuthenticationService } from './services/authentication.service';
         EventComponent,
         EventStackComponent,
         LoginComponent,
-        LoginFormComponent
+        LoginFormComponent,
+        DateSelectionComponent,
+        CalendarComponent
     ],
     imports: [
         BrowserModule,

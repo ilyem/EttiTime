@@ -7,7 +7,7 @@
     </div>
   </div>
   <div *ngIf="event.attachments && event.attachments.length" [ngClass]="{'attachments': true, 'attachments--show': showAttachments}">
-    <img class="attachments__icon" (click)="toggleAttachments()" src="https://image.flaticon.com/icons/png/512/351/351485.png" alt="">
+    <img class="attachments__icon attachments__icon--rotate" (click)="toggleAttachments()" src="assets/Clip.svg" alt="">
     <div>
       <h2 class="info__title d-flex" *ngIf="event.lecture"> <span>{{event.lecture.nr}}.</span> {{event.lecture.title}}</h2>
       <ul class="attachments__list">

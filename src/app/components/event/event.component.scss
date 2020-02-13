@@ -39,7 +39,6 @@
 
     .attachments {
       display: flex;
-      justify-content: space-between;
       position: absolute;
       top: 0;
       left: calc(100% - 25px);
@@ -48,9 +47,11 @@
       background: #efeded;
       transition: left .35s ease-in-out;
       &__icon {
-        height: 15px;
-        width: 15px;
+       height: 20px;
         margin: 5px;
+        &--rotate {
+          transform: rotate(45deg);
+        }
         &--close {
           height: 12px;
           width: 12px;

@@ -1,10 +1,6 @@
 
-<div class="weekSelection">
-  <img class="arrowLeft"src="" alt="">
-<span>{{date | date: 'dd.MM.y'}}</span>
-<span>{{date | date: 'dd.MM.y'}}</span>
-  <img class="arrowRight"src="" alt="">
-</div>
+
+<app-date-selection></app-date-selection>
 <div class="stacks">
   <app-event-stack *ngFor="let day of days"></app-event-stack>
 </div>

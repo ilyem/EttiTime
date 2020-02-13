@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 59.1 (86144) - https://sketch.com -->
+    <title>Icon /  Outline - Thin / Cross</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M14.4116403,5.46999957 L15.4723597,6.53060043 L11.5306403,10.4706996 L15.4723597,14.4126996 L14.4116403,15.4733004 L10.4706403,11.5316996 L6.53035974,15.4736004 L5.46964026,14.4129996 L9.41064026,10.4716996 L5.46964026,6.53030043 L6.53035974,5.46969957 L10.4706403,9.41069957 L14.4116403,5.46999957 Z" id="path-1"></path>
+    </defs>
+    <g id="Icon-/--Outline---Thin-/-Cross" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <mask id="mask-2" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <use id="Icon" fill="#6D6D6D" fill-rule="nonzero" xlink:href="#path-1"></use>
+        <g id="CK-/-Basic-/-Colour-/-Black" mask="url(#mask-2)" fill="#6D6D6D">
+            <rect id="Color" x="0" y="0" width="20" height="20"></rect>
+        </g>
+    </g>
+</svg>

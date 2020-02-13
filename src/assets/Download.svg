@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 59.1 (86144) - https://sketch.com -->
+    <title>Icon /  Outline - Thin / Download</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M15.2272366,15.6636886 L15.2272366,17 L5,17 L5,15.6636886 L15.2272366,15.6636886 Z M10.7820412,3 L10.7819417,11.818 L13.9880928,8.6123029 L14.9330076,9.55721775 L10.5864321,13.9037933 C10.3515941,14.1386312 9.98543758,14.162115 9.72433593,13.9742447 L9.64151721,13.9037933 L5.29494167,9.55721775 L6.23985652,8.6123029 L9.44494167,11.817 L9.44572985,3 L10.7820412,3 Z" id="path-1"></path>
+    </defs>
+    <g id="Icon-/--Outline---Thin-/-Download" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <mask id="mask-2" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <use id="Icon" fill="#6D6D6D" fill-rule="nonzero" xlink:href="#path-1"></use>
+        <g id="CK-/-Basic-/-Colour-/-Black" mask="url(#mask-2)" fill="#000000">
+            <rect id="Color" x="0" y="0" width="20" height="20"></rect>
+        </g>
+    </g>
+</svg>

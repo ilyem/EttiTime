@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 59.1 (86144) - https://sketch.com -->
+    <title>Icon /  Outline - Thin / Arrow left</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M7,14.7120635 L7.94848144,15.6603866 L13.303619,10.3043549 C13.5654603,10.0424699 13.5654603,9.61791677 13.303619,9.35603177 L7.94848144,4 L7,4.94832309 L11.8810552,9.83019332 L7,14.7120635 Z" id="path-1"></path>
+    </defs>
+    <g id="Icon-/--Outline---Thin-/-Arrow-left" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <mask id="mask-2" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <use id="Icon" fill="#6D6D6D" fill-rule="nonzero" xlink:href="#path-1"></use>
+        <g id="CK-/-Basic-/-Colour-/-Black" mask="url(#mask-2)" fill="#000000">
+            <rect id="Color" x="0" y="0" width="20" height="20"></rect>
+        </g>
+    </g>
+</svg>
