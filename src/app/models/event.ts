@@ -11,7 +11,7 @@ export class Event {
   type: string;
   teacher: string;
   day: string;
-  lecture?: {
+  lesson?: {
     nr: number,
     title: string,
     attachments: Attachment[]

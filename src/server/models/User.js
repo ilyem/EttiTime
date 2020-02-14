@@ -2,11 +2,16 @@
 var mongoose = require('mongoose');
 var utils = require('../utils');
 var jwt = require('jsonwebtoken')
-var options = {discriminatorKey: 'type'};
+// var options = {discriminatorKey: 'type'};
 // Setup schema
 var userSchema = mongoose.Schema({
   name: {
     type: String,
+    required: true
+  },
+  type: {
+    type: String,
+    enum: ['student', 'teacher'],
     required: true
   },
   email: {
@@ -20,8 +25,15 @@ var userSchema = mongoose.Schema({
   },
   token: {
     type: String,
-  }
-}, options);
+  },
+  group: {
+    type: String,
+    required: function () {return this.type === "student"}
+  },
+});
+
+    
+// }, options);
 
 
 //Find user by email

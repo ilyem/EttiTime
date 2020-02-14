@@ -4,11 +4,10 @@ const User = require('./User');
 const Teacher = User.discriminator('Teacher', mongoose.Schema({
   modules: {
       type: [mongoose.Schema.Types.ObjectId],
-      ref: 'Module'
+      ref: 'Modul'
   },
 })
 )
 
 var Teacher = mongoose.model('user', Teacher);
-
 module.exports = Teacher
