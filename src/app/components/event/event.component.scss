@@ -9,7 +9,6 @@
     box-shadow: 0 2px 2px 0 #adaaaa45;
     padding: 5px;
     margin: -1px -1px 2px;
-    overflow: hidden;
     .info {
       margin-right: 5px;
 
@@ -46,6 +45,7 @@
       bottom: 0;
       background: #efeded;
       transition: left .35s ease-in-out;
+      overflow: hidden;
       &__icon {
        height: 20px;
         margin: 5px;

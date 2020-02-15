@@ -1,5 +1,5 @@
 export enum EVENTS {
-  LECTURE = "lecture",
+  LESSON = "lesson",
   SEMINAR = "seminar",
   LABROATORY = "laboratory",
   PROJECT = "project",
@@ -11,19 +11,9 @@ export class Event {
   type: string;
   teacher: string;
   day: string;
-  lesson?: {
-    nr: number,
-    title: string,
-    attachments: Attachment[]
-  }
-  starts: {
-    hour: number,
-    minutes: number
-  };
-  ends: {
-    hour: number,
-    minutes: number
-  }
+  lesson?: Lesson
+  starts: Time;
+  ends: Time;
   classroom?: string;
   attachments: Attachment[];
   exam?: {
@@ -33,4 +23,15 @@ export class Event {
 export class Attachment {
   name: string;
   link: string
+}
+export class Lesson {
+  nr: number;
+  title: string;
+  description?: string;
+  attachments: Attachment[]
+}
+export class Time {
+  hour: number;
+  minutes: number
+
 }

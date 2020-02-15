@@ -50,7 +50,7 @@ export class TimetableComponent implements OnInit {
           link: 'http://atm.neuro.pub.ro/rradescu/ASC/CopertaASC2008.jpg'
         }
       ],
-      lecture: {
+      lesson: {
         nr: 2,
         title: "Tensiunea de prag elemente rezistive",
         attachments: [
@@ -86,7 +86,7 @@ export class TimetableComponent implements OnInit {
   windowWidth: number;
   breakPoint = BreakPoint;
   rowHeight = 25;
-  date: Date= new Date();
+  date: Date = new Date();
 
 
   @ViewChild('scheduleHeader') scheduleHeader;

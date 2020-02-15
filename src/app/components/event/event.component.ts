@@ -22,19 +22,19 @@ export class EventComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.attachments = this.event.lecture ? [...this.event.lecture.attachments, ...this.event.attachments] : this.event.attachments;
+    this.attachments = this.event.lesson ? [...this.event.lesson.attachments, ...this.event.attachments] : this.event.attachments;
     // this.timeInterval = this.utilsService.getTimeInterval(this.event.starts, this.event.ends);
     // this.showPreview();
     //this.showDetails();
   }
-  toggleAttachments () {
+  toggleAttachments() {
     this.showAttachments = !this.showAttachments
   }
   showDetails() {
     this.eventView = this.details;
   }
   showPreview() {
-   this.eventView = this.preview;
+    this.eventView = this.preview;
   }
 
 

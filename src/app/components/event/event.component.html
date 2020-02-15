@@ -6,17 +6,20 @@
       <span>{{event.type}}</span> <span *ngIf="event.exam">exam</span> <span>{{event.classroom}}</span>
     </div>
   </div>
-  <div *ngIf="event.attachments && event.attachments.length" [ngClass]="{'attachments': true, 'attachments--show': showAttachments}">
+  <div *ngIf="event.attachments && event.attachments.length"
+    [ngClass]="{'attachments': true, 'attachments--show': showAttachments}">
     <img class="attachments__icon attachments__icon--rotate" (click)="toggleAttachments()" src="assets/Clip.svg" alt="">
     <div>
-      <h2 class="info__title d-flex" *ngIf="event.lecture"> <span>{{event.lecture.nr}}.</span> {{event.lecture.title}}</h2>
+      <h2 class="info__title d-flex" *ngIf="event.lesson"> <span>{{event.lesson.nr}}.</span> {{event.lesson.title}}</h2>
       <ul class="attachments__list">
         <li class="attachment" *ngFor="let attachment of attachments">
-          <img class="attachment__icon"src="" alt="">
+          <img class="attachment__icon" src="" alt="">
           <a href="{{attachment.link}}">{{attachment.name}}</a>
         </li>
       </ul>
     </div>
-    <img class="attachments__icon attachments__icon--close" (click)="toggleAttachments()" src="https://image.flaticon.com/icons/svg/1828/1828747.svg" alt="">
+    <img class="attachments__icon attachments__icon--close" (click)="toggleAttachments()"
+      src="https://image.flaticon.com/icons/svg/1828/1828747.svg" alt="">
   </div>
+  <app-info></app-info>
 </li>

@@ -7,8 +7,13 @@ var lessonSchema = mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Modul'
   },
-  nr: {
+  type: {
     type: String,
+    enum: ['study', 'exam'],
+    required: true
+  },
+  nr: {
+    type: Number,
     required: true
   },
   title: {

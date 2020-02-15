@@ -1,8 +1,8 @@
 // Modules
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule }   from '@angular/forms';
-import { HttpClientModule }    from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 // Components
 import { AppRoutingModule } from './app-routing.module';
@@ -16,10 +16,12 @@ import { AdminComponent } from './pages/admin/admin.component';
 import { EventComponent } from './components/event/event.component';
 import { EventStackComponent } from './components/eventStack/event-stack.component';
 import { LoginComponent } from './pages/login/login.component';
-import {LoginFormComponent } from './components/login-form/login-form.component';
+import { FormComponent } from './components/form/form.component';
 import { AuthenticationService } from './services/authentication.service';
 import { DateSelectionComponent } from './components/date-selection/date-selection.component';
 import { CalendarComponent } from './components/calendar/calendar.component';
+import { ModuleComponent } from './pages/module/module.component';
+import { InfoComponent } from './components/info/info.component';
 @NgModule({
     declarations: [
         AppComponent,
@@ -32,9 +34,11 @@ import { CalendarComponent } from './components/calendar/calendar.component';
         EventComponent,
         EventStackComponent,
         LoginComponent,
-        LoginFormComponent,
+        FormComponent,
         DateSelectionComponent,
-        CalendarComponent
+        CalendarComponent,
+        ModuleComponent,
+        InfoComponent,
     ],
     imports: [
         BrowserModule,

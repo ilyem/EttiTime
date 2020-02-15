@@ -1,4 +1,4 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Event } from 'src/app/models/event';
 import { UtilsService } from '../../services/utils.service';
 
@@ -53,7 +53,7 @@ export class EventStackComponent implements OnInit {
           link: 'http://atm.neuro.pub.ro/rradescu/ASC/CopertaASC2008.jpg'
         }
       ],
-      lecture: {
+      lesson: {
         nr: 2,
         title: "Tensiunea de prag elemente rezistive",
         attachments: [
@@ -87,7 +87,7 @@ export class EventStackComponent implements OnInit {
   ]
   date: Date = new Date();
 
-  constructor( public utils: UtilsService ) {
+  constructor(public utils: UtilsService) {
   }
 
   ngOnInit() {

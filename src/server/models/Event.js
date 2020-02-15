@@ -38,6 +38,9 @@ var eventSchema = mongoose.Schema({
         type: String,
         enum: ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'],
         required: true
+    },
+    info: {
+        type: String
     }
 });
 

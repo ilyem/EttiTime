@@ -1,0 +1,15 @@
+.module {
+    max-width: 700px;
+    margin: 0 auto;
+    &__author{
+        text-align: end;
+        margin-right: 100px;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+    &__lessons{
+        .lesson{
+          position: relative;
+        }
+    }
+}

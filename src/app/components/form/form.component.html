@@ -1,0 +1,12 @@
+<div class="container">
+  <h1>Log in</h1>
+  <form class="form" #generalForm="ngForm" (ngSubmit)="onSubmit(generalForm)">
+    <ng-container *ngFor="let input of inputs">
+      <label class="form__label" for="input.name">{{input.label}}</label>
+      <input [readonly]="input.readonly" [required]="input.required" class="form__input" [name]="input.name"
+        [(ngModel)]="input.value" [type]="input.type" [placeholder]="input.placeholder">
+    </ng-container>
+    <button [disabled]="!generalForm.form.valid" class="form__button" type="submit">{{submitText}}</button>
+  </form>
+  {{generalForm.value | json }}
+</div>
