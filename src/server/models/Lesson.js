@@ -20,9 +20,12 @@ var lessonSchema = mongoose.Schema({
       name: String,
       link: String
     }
+  },
+  info: {
+    type: String
   }
 });
 
-var Lesson = mongoose.model('lesson', lessonSchema);
+var Lesson = mongoose.model('Lesson', lessonSchema);
 
 module.exports = Lesson

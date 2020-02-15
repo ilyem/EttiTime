@@ -28,11 +28,11 @@ var userSchema = mongoose.Schema({
   },
   group: {
     type: String,
-    required: function () {return this.type === "student"}
+    required: function () { return this.type === "student" }
   },
 });
 
-    
+
 // }, options);
 
 
@@ -44,16 +44,16 @@ userSchema.statics.findByCredentials = async (email, password) => {
     throw Error('Invalid login credentials')
   }
   const cryptPassword = utils.crypt(password);
-  if ( cryptPassword !== user.password) {
-    throw Error('Invalid login credentials' )
+  if (cryptPassword !== user.password) {
+    throw Error('Invalid login credentials')
   }
   return user
 }
 
-userSchema.methods.generateAuthToken = async function() {
+userSchema.methods.generateAuthToken = async function () {
   // Generate an auth token for the user
   const user = this
-  const token = jwt.sign({_id: user._id}, process.env.JWT_KEY)
+  const token = jwt.sign({ _id: user._id }, process.env.JWT_KEY)
   user.token = token;
   await user.save()
   return token
@@ -62,12 +62,12 @@ userSchema.methods.generateAuthToken = async function() {
 //hashing the password
 userSchema.pre('save', function (next) {
   let user = this;
-  if(user.isModified('password')){
-  user.password = utils.crypt(user.password);
+  if (user.isModified('password')) {
+    user.password = utils.crypt(user.password);
   }
   next();
 });
 // Export User model
-var User = mongoose.model('user', userSchema);
+var User = mongoose.model('User', userSchema);
 
 module.exports = User

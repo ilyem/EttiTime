@@ -14,6 +14,9 @@ router.get('/', function (req, res) {
 var userController = require('./controllers/userController');
 var modulController = require('./controllers/modulController');
 var timelineController = require('./controllers/timelineController');
+var eventController = require('./controllers/eventController');
+var lessonController = require('./controllers/lessonController');
+
 
 // User routes
 router.route('/users')
@@ -58,5 +61,26 @@ router.route('/timelines/:timeline_id')
     .put(timelineController.update)
     .delete(timelineController.delete);
 
+//Module routes
+router.route('/events')
+    .get(eventController.index)
+    .post(eventController.new);
+
+router.route('/events/:event_id')
+    .get(eventController.view)
+    .patch(eventController.update)
+    .put(eventController.update)
+    .delete(eventController.delete);
+
+//Module routes
+router.route('/lessons')
+    .get(lessonController.index)
+    .post(lessonController.new);
+
+router.route('/lessons/:lesson_id')
+    .get(lessonController.view)
+    .patch(lessonController.update)
+    .put(lessonController.update)
+    .delete(lessonController.delete);
 // Export API routes
 module.exports = router;

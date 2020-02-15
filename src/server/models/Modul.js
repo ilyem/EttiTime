@@ -17,7 +17,7 @@ var modulSchema = mongoose.Schema({
     ref: 'User'
   },
   lessons: {
-    type:  mongoose.Schema.Types.ObjectId,
+    type: mongoose.Schema.Types.ObjectId,
     ref: 'Lesson'
   },
   groups: {
@@ -25,6 +25,6 @@ var modulSchema = mongoose.Schema({
   }
 });
 
-var Modul = mongoose.model('modul', modulSchema);
+var Modul = mongoose.model('Modul', modulSchema);
 
 module.exports = Modul

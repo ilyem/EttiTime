@@ -3,14 +3,10 @@ var mongoose = require('mongoose');
 
 // Setup schema
 var eventSchema = mongoose.Schema({
-    name: {
-        type: String,
-        required: true
-    },
-    timelines: {
-        type: [mongoose.Schema.Types.ObjectId],
+    timelines: [{
+        type: mongoose.Schema.Types.ObjectId,
         ref: 'Timeline'
-    },
+    }],
     startTime: {
         type: {
             hour: Number,
@@ -45,6 +41,6 @@ var eventSchema = mongoose.Schema({
     }
 });
 
-var Event = mongoose.model('event', eventSchema);
+var Event = mongoose.model('Event', eventSchema);
 
 module.exports = Event

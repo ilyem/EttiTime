@@ -19,12 +19,12 @@ app.use(bodyParser.json());
 // Connect to Mongoose and set connection variable
 const uri = 'mongodb://em:em@mycluster-shard-00-00-4vu9n.gcp.mongodb.net:27017,mycluster-shard-00-01-4vu9n.gcp.mongodb.net:27017,mycluster-shard-00-02-4vu9n.gcp.mongodb.net:27017/timetable?ssl=true&replicaSet=myCluster-shard-0&authSource=admin&retryWrites=true&w=majority';
 
-mongoose.connect(uri, { useNewUrlParser: true});
+mongoose.connect(uri, { useNewUrlParser: true });
 
 var db = mongoose.connection;
 
 // Added check for DB connection
-if(!db)
+if (!db)
     console.log("Error connecting db")
 else
     console.log("Db connected successfully")

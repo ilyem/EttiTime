@@ -37,14 +37,16 @@ exports.view = function (req, res) {
 };
 // Handle view modul info
 exports.viewUserModuls = function (req, res) {
-  Modul.find({ teacher: req.params.user_id }, function (err, moduls) {
-    if (err)
-      res.send(err);
-    res.json({
-      message: 'Moduls details loading..',
-      data: moduls
+  Modul.find({ teacher: req.params.user_id }, '-_id -__v')
+    .populate("teacher", "name  -_id")
+    .exec(function (err, moduls) {
+      if (err)
+        res.send(err);
+      res.json({
+        message: 'Moduls details loading..',
+        data: moduls
+      });
     });
-  });
 };
 // Handle update modul info
 exports.update = function (req, res) {
