@@ -1,0 +1,46 @@
+{
+    "user": {
+        "id": 123456,
+        "firstName": "Emilia",
+        "lastName": "Chiroiu",
+        "type": "student",
+        "group": "414Ba"
+    },
+    "module": {
+        "name": "Modul 1",
+        "teacher": "5e46785875428a1d641bca2b",
+        "description": "dsknfkjsfnkjfnsekjfnekjfenkjef",
+        "lessons": [
+            {
+                "nr": 1,
+                "title": "Lesson 1",
+                "description": "sfjkbksjbfskdfbskfjb",
+                "attachments": [
+                    {
+                        "name": "Attachment 1",
+                        "link": "#"
+                    },
+                    {
+                        "name": "Attachment 2",
+                        "link": "#"
+                    }
+                ]
+            },
+            {
+                "nr": 2,
+                "title": "Lesson 2",
+                "description": "sfjkbksjbfskdfbskfjb",
+                "attachments": [
+                    {
+                        "name": "Attachment 1",
+                        "link": "#"
+                    },
+                    {
+                        "name": "Attachment 2",
+                        "link": "#"
+                    }
+                ]
+            }
+        ]
+    }
+}

@@ -1,6 +1,6 @@
 <div class="login__container">
   <div class="greeting"> Hi there !</div>
   <div class="login">
-    <app-form [inputs]="inputs" submitText="login" [handleSubmit]="login"></app-form>
+    <app-form [inputs]="inputs" submitText="login" (formSubmit)="login($event)"></app-form>
   </div>
 </div>

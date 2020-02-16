@@ -22,6 +22,7 @@ import { DateSelectionComponent } from './components/date-selection/date-selecti
 import { CalendarComponent } from './components/calendar/calendar.component';
 import { ModuleComponent } from './pages/module/module.component';
 import { InfoComponent } from './components/info/info.component';
+import { PopupComponent } from './components/popup/popup.component';
 @NgModule({
     declarations: [
         AppComponent,
@@ -39,6 +40,7 @@ import { InfoComponent } from './components/info/info.component';
         CalendarComponent,
         ModuleComponent,
         InfoComponent,
+        PopupComponent,
     ],
     imports: [
         BrowserModule,

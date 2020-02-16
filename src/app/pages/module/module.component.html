@@ -1,50 +1,35 @@
 <div class="module">
-  <h1 class="module__title">Modul title</h1>
-  <p class="module__author">Teacher</p>
-  <p class="module__description">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
-    has been the industry's
-    standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a
-    type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
-    remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing
-    Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of
-    Lorem Ipsum.</p>
+  <h1 class="module__title">{{module.name}}</h1>
+  <p class="module__author">{{module.teacher}}</p>
+  <div class="modify">
+    <p class="module__description">{{module.description}}</p>
+    <ng-container *ngTemplateOutlet="modify;context:{item: module, type:'module'}"></ng-container>
+  </div>
   <ul class="module__lessons">
-    <li class="lesson">
-      <h2 class="lesson__title">1. Lesson title</h2>
-      <p class="lesson__description">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-        Ipsum has been
-        the industry's
-        standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
-        type specimen book.</p>
+    <li class="lesson" *ngFor="let lesson of module.lessons, let i = index">
+      <div class="modify">
+        <h2 class="lesson__title">{{lesson.nr}}. {{lesson.title}}</h2>
+        <ng-container *ngTemplateOutlet="modify;context:{item: lesson, type:'lesson'}"></ng-container>
+      </div>
+      <p class="lesson__description">{{lesson.description}}</p>
       <ul class="lesson_attachments">
-        <li class="attachment">
-          <a class="attachment__link" href="#">Attachment 1</a>
-        </li>
-        <li>
-          <a href="#">Attachment 1</a>
-        </li>
-        <li>
-          <a href="#">Attachment 1</a>
+        <li class="attachment" *ngFor="let attachment of lesson.attachments">
+          <div class="modify">
+            <a class="attachment__link" [href]="attachment.link">{{attachment.name}}</a>
+            <ng-container *ngTemplateOutlet="modify;context:{item: attachment, type:'attachment'}"></ng-container>
+          </div>
         </li>
       </ul>
       <app-info></app-info>
     </li>
-    <li>
-      <h2>1. Lesson title</h2>
-      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-        standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
-        type specimen book.</p>
-      <ul>
-        <li>
-          <a href="#">Attachment 1</a>
-        </li>
-        <li>
-          <a href="#">Attachment 1</a>
-        </li>
-        <li>
-          <a href="#">Attachment 1</a>
-        </li>
-      </ul>
-    </li>
   </ul>
 </div>
+<!-- Modify template -->
+<ng-template #modify let-item="item" let-type="type" let-inputs="item.context.inputs"
+  let-submitText="item.context.submitText" let-type="item.context.type">
+  <img class="modify__icon" src="assets/pen.svg" (click)="setForm(item, type)" alt="">
+</ng-template>
+<app-popup>
+  <app-form [inputs]="inputs" [submitText]="submitText" (formSubmit)="onSubmit($event)">
+  </app-form>
+</app-popup>

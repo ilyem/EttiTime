@@ -1,0 +1,7 @@
+<div *ngIf="show" class="popup">
+  <div class="popup__content">
+    <img class="popup__icon popup__icon--close" (click)="togglePopup()"
+      src="https://image.flaticon.com/icons/svg/1828/1828747.svg" alt="">
+    <ng-content></ng-content>
+  </div>
+</div>

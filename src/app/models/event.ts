@@ -33,5 +33,4 @@ export class Lesson {
 export class Time {
   hour: number;
   minutes: number
-
 }

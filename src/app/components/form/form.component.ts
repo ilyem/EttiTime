@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ViewChild } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, EventEmitter, Output } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import FormInput from 'src/app/models/input';
 @Component({
@@ -10,18 +10,16 @@ export class FormComponent implements OnInit {
   @Input() inputs: FormInput[];
   @Input() submitText: string;
   @Input() disableForm: boolean;
-  @Input() formName: string;
-  @Input() handleSubmit: (form: FormGroup['value']) => void;
+  @Output() formSubmit: EventEmitter<FormGroup['value']> = new EventEmitter();
   @ViewChild('generalForm') generalForm;
   constructor() { }
 
   ngOnInit() {
     setTimeout(() => this.disableForm ? this.generalForm.form.disable() : undefined)
   }
-  onSubmit(form: FormGroup) {
-    this.generalForm.form.disable()
-    console.log(form);
-    this.handleSubmit(form.value);
+  onSubmit(value: FormGroup["value"]) {
+    console.log(value);
+    this.formSubmit.emit(value);
   }
 
 }

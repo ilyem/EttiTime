@@ -7,9 +7,28 @@
         font-weight: bold;
         text-transform: uppercase;
     }
+    &__description{
+        display: inline-block;
+        margin-bottom: 40px;
+    }
     &__lessons{
         .lesson{
           position: relative;
+          &__title{
+              display: inline-block;
+          }
+        }
+    }
+    .modify {
+        position: relative;
+        display: inline-block;
+        margin-bottom: 20px;
+        &__icon{
+            height: 20px;
+            width: 20px;
+            position: relative;
+            top: -20px;
+            right: -10px;
         }
     }
 }

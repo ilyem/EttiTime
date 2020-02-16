@@ -9,6 +9,14 @@ export default class FormInput {
     value: string
     required?: boolean
     readonly?: boolean
+    constructor(name, value, placeholder, type?, required?) {
+        this.label = name;
+        this.value = value;
+        this.name = name;
+        this.placeholder = placeholder
+        this.required = required
+        this.type = type ? type : 'text'
+    }
 };
 
 export const loginInputs: FormInput[] = [
@@ -29,13 +37,13 @@ export const loginInputs: FormInput[] = [
         required: true
     }
 ]
-export const moduleInputs = (moduleDesc: Module["description"]): FormInput[] => {
+export const moduleInputs = (module: Module): FormInput[] => {
     return [
         {
             name: "description",
             type: "text",
             placeholder: "Enter your module description",
-            value: moduleDesc,
+            value: module.description,
             required: true
         }]
 }
