@@ -17,12 +17,13 @@ import { EventComponent } from './components/event/event.component';
 import { EventStackComponent } from './components/eventStack/event-stack.component';
 import { LoginComponent } from './pages/login/login.component';
 import { FormComponent } from './components/form/form.component';
-import { AuthenticationService } from './services/authentication.service';
+import { UsersService } from './services/users.service';
 import { DateSelectionComponent } from './components/date-selection/date-selection.component';
 import { CalendarComponent } from './components/calendar/calendar.component';
 import { ModuleComponent } from './pages/module/module.component';
 import { InfoComponent } from './components/info/info.component';
 import { PopupComponent } from './components/popup/popup.component';
+import { TimeComponent } from './components/time/time.component';
 @NgModule({
     declarations: [
         AppComponent,
@@ -41,6 +42,7 @@ import { PopupComponent } from './components/popup/popup.component';
         ModuleComponent,
         InfoComponent,
         PopupComponent,
+        TimeComponent,
     ],
     imports: [
         BrowserModule,
@@ -48,7 +50,7 @@ import { PopupComponent } from './components/popup/popup.component';
         AppRoutingModule,
         FormsModule
     ],
-    providers: [AuthenticationService],
+    providers: [UsersService],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

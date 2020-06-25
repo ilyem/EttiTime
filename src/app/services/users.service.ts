@@ -20,10 +20,10 @@ export class TokenPayload {
 }
 
 @Injectable()
-export class AuthenticationService {
+export class UsersService {
   private token: string;
 
-  constructor(private http: HttpClient, private router: Router) {}
+  constructor(private http: HttpClient, private router: Router) { }
 
   private saveToken(token: string): void {
     localStorage.setItem('token', token);
@@ -37,25 +37,13 @@ export class AuthenticationService {
     return this.token;
   }
 
-  public getUserDetails(): UserDetails {
-    const token = this.getToken();
-    let payload;
-    if (token) {
-      payload = token.split('.')[1];
-      payload = window.atob(payload);
-      return JSON.parse(payload);
-    } else {
-      return null;
-    }
-  }
-
-  private request(method: 'post'|'get', type: 'login', user?: TokenPayload): Promise<any> {
+  private request(method: 'post' | 'get', type: 'login', user?: TokenPayload): Promise<any> {
     let base;
 
     if (method === 'post') {
       base = this.http.post(`${url}/api/users/${type}`, user);
     } else {
-      base = this.http.get(`${url}/api/users/${type}`, { headers: { Authorization: `Bearer ${this.getToken()}` }});
+      base = this.http.get(`${url}/api/users/${type}`, { headers: { Authorization: `Bearer ${this.getToken()}` } });
     }
 
     const request = base.pipe(

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-import { AuthenticationService } from 'src/app/services/authentication.service';
+import { UsersService } from 'src/app/services/users.service';
 import FormInput, { loginInputs } from '../../models/input';
 
 @Component({
@@ -11,14 +11,14 @@ import FormInput, { loginInputs } from '../../models/input';
 export class LoginComponent implements OnInit {
   inputs: FormInput[] = loginInputs;
 
-  constructor(private auth: AuthenticationService) { }
+  constructor(private usersService: UsersService) { }
 
   ngOnInit() {
   }
   login = async (formValue: FormGroup['value']) => {
     console.log("here")
     try {
-      const response = await this.auth.login(formValue);
+      const response = await this.usersService.login(formValue);
       console.log(response);
     } catch (error) {
     }

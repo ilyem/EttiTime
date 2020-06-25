@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-info',
@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InfoComponent implements OnInit {
   showText: boolean;
+  @Input() infoText: string = "Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum hasbeenthe industry's";
   constructor() { }
 
   ngOnInit() {

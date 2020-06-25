@@ -1,45 +1,17 @@
 <div class="stack">
-  <ul class="stack__list">
-    <li>
-      8:00
-    </li>
-    <li>
-      9:00
-    </li>
-    <li>
-      10:00
-    </li>
-    <li>
-      11:00
-    </li>
-    <li>
-      12:00
-    </li>
-    <li>
-      13:00
-    </li>
-    <li>
-      14:00
-    </li>
-    <li>
-      15:00
-    </li>
-    <li>
-      16:00
-    </li>
-  </ul>
+  <app-time></app-time>
   <div class="container">
     <header class="header">
       <span class="header__heading">{{date | date: 'EEEE'}}</span>
       <span class="header__heading header__heading_grey">{{date | date: 'dd.MM.y'}}</span>
     </header>
     <ul class="container__list">
-<ng-container *ngFor="let event of events; index as i">
-  <app-event  [event]="event"></app-event>
-  <li *ngIf="i+1 < events.length && utils.getTimeInterval(event.starts, events[i+1].ends)" class="list__gap">
-    <p>{{utils.getTimeInterval(event.starts, events[i].ends)}}H GAP</p>
-  </li>
-</ng-container>
+      <ng-container *ngFor="let event of events; index as i">
+        <app-event [event]="event"></app-event>
+        <li *ngIf="i+1 < events.length && utils.getTimeInterval(event.starts, events[i+1].ends)" class="list__gap">
+          <p>{{utils.getTimeInterval(event.starts, events[i].ends)}}H GAP</p>
+        </li>
+      </ng-container>
     </ul>
   </div>
 </div>

@@ -9,8 +9,8 @@ export default class FormInput {
     value: string
     required?: boolean
     readonly?: boolean
-    constructor(name, value, placeholder, type?, required?) {
-        this.label = name;
+    constructor(name, value, placeholder, type?, required?, label?) {
+        this.label = label ? label : name;
         this.value = value;
         this.name = name;
         this.placeholder = placeholder
