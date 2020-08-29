@@ -1,29 +1,29 @@
-.module {
+.subject {
     max-width: 700px;
     margin: 0 auto;
-    &__author{
+    &__author {
         text-align: end;
         margin-right: 100px;
         font-weight: bold;
         text-transform: uppercase;
     }
-    &__description{
+    &__description {
         display: inline-block;
         margin-bottom: 40px;
     }
-    &__lessons{
-        .lesson{
-          position: relative;
-          &__title{
-              display: inline-block;
-          }
+    &__lessons {
+        .lesson {
+            position: relative;
+            &__title {
+                display: inline-block;
+            }
         }
     }
     .modify {
         position: relative;
         display: inline-block;
         margin-bottom: 20px;
-        &__icon{
+        &__icon {
             height: 20px;
             width: 20px;
             position: relative;

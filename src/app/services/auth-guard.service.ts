@@ -5,10 +5,10 @@ import { UsersService } from './users.service';
 @Injectable()
 export class AuthGuardService implements CanActivate {
 
-  constructor(private auth: UsersService, private router: Router) { }
+  constructor(private usersService: UsersService, private router: Router) { }
 
   canActivate() {
-    if (!true) {
+    if (!this.usersService.getToken()) {
       this.router.navigateByUrl('/');
       return false;
     }

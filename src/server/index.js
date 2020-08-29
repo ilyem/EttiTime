@@ -10,7 +10,6 @@ let mongoose = require('mongoose');
 let app = express();
 // Import routes
 let apiRoutes = require("./api-routes");
-const permittedCrossDomainPolicies = require('helmet-crossdomain')
 // Configure bodyparser to handle post requests
 app.use(bodyParser.urlencoded({
     extended: true
@@ -32,7 +31,6 @@ else
 // Setup server port
 var port = process.env.PORT || 3000;
 
-app.use(permittedCrossDomainPolicies({ permittedPolicies: 'all' }))
 
 // Send message for default URL
 app.get('/', (req, res) => res.send('Hello timetable'));

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Event } from 'src/app/models/event';
+import { Event, EventType } from 'src/app/models/event';
 import { UtilsService } from '../../services/utils.service';
 
 @Component({
@@ -13,7 +13,7 @@ export class EventStackComponent implements OnInit {
     {
       name: "Structuri de Date si Algoritmi",
       abbreviation: "SDA",
-      type: 'course',
+      type: EventType.Course,
       teacher: "M. Ionescu",
       classroom: "B313",
       day: "Monday",
@@ -24,21 +24,19 @@ export class EventStackComponent implements OnInit {
     {
       name: "Tehnologii Calculatoare",
       abbreviation: "TC",
-      type: 'course',
+      type: EventType.Course,
       teacher: "M. Ionescu",
       classroom: "B313",
       day: "Friday",
       starts: { hour: 8, minutes: 30 },
       ends: { hour: 10, minutes: 30 },
       attachments: [],
-      exam: {
-        attachments: [],
-      }
+      exam: true
     },
     {
       name: "Măsurări în Electronică și Telecomunicații",
       abbreviation: "METc",
-      type: 'course',
+      type: EventType.Course,
       teacher: "M. Ionescu",
       day: "Tuesday",
       starts: { hour: 9, minutes: 30 },
@@ -67,7 +65,7 @@ export class EventStackComponent implements OnInit {
     {
       name: "Grafică Inginerească și Desen Tehnic",
       abbreviation: "Grafica",
-      type: 'course',
+      type: EventType.Course,
       teacher: "M. Ionescu",
       day: "Tuesday",
       starts: { hour: 13, minutes: 0 },
@@ -77,7 +75,7 @@ export class EventStackComponent implements OnInit {
     {
       name: "TRAR",
       abbreviation: "TRAR",
-      type: 'course',
+      type: EventType.Course,
       teacher: "M. Ionescu",
       day: "Tuesday",
       starts: { hour: 17, minutes: 30 },

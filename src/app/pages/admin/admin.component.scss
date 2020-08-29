@@ -1,0 +1,25 @@
+.table-container .table {
+    th,
+    td {
+        padding: 0;
+    }
+
+    tbody {
+        span.devider {
+            top: 50%;
+            left: 0;
+            border-bottom: 1px dotted;
+            color: #dee2e6;
+        }
+
+        .hour {
+            position: relative;
+            max-width: 20px;
+            text-align: center;
+        }
+    }
+}
+.stacks {
+    display: flex;
+    overflow-x: scroll;
+}

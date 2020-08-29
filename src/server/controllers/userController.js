@@ -10,7 +10,6 @@ exports.index = async (req, res) => {
 // Handle create user actions
 exports.new = function (req, res) {
   var user = new User({ ...req.body });
-  console.log(user);
   // save the user and check for errors
   user.save(function (err) {
     // Check for validation error
@@ -40,9 +39,7 @@ exports.update = function (req, res) {
     if (err)
       res.send(err);
     user.name = req.body.name ? req.body.name : user.name;
-    user.gender = req.body.gender;
     user.email = req.body.email;
-    user.phone = req.body.phone;
     // save the user and check for errors
     user.save(function (err) {
       if (err)

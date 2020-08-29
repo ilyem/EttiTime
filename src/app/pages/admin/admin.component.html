@@ -1,3 +1,22 @@
-<p>
-  admin works!
-</p>
+<app-navigation></app-navigation>
+<div class="stacks">
+  <ng-container *ngFor="let event of events; index as i">
+    <app-event [event]="event"></app-event>
+  </ng-container>
+</div>
+<div class="container">
+  <div class="timelines">
+    <h2>Timelines</h2>
+    <ng-container *ngTemplateOutlet="modify;context:{item: lesson, type:'lesson'}"></ng-container>
+
+    <div>
+      <p>Courses</p>
+    </div>
+  </div>
+  <div class="subjects"></div>
+  <div class="events"></div>
+</div>
+<ng-template #modify let-item="item" let-type="type" let-inputs="item.context.inputs"
+  let-submitText="item.context.submitText" let-type="item.context.type">
+  <img class="modify__icon" src="assets/pen.svg" (click)="setForm(item, type)" alt="">
+</ng-template>

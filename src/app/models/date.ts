@@ -1,13 +1,13 @@
 export enum WeekDays {
-    Monday = 1,
-    Tuesday = 2,
-    Wednesday = 3,
-    Thursday = 4,
-    Friday = 5,
-    Saturday = 6,
-    Sunday = 0,
+    Monday = 'monday',
+    Tuesday = 'tuesday',
+    Wednesday = 'wednesday',
+    Thursday = 'thursday',
+    Friday = 'friday',
+    Saturday = 'saturday',
+    Sunday = 'sunday',
 }
 export class Time {
-hour: number;
-minutes: number
+    hour: number;
+    minutes: number
 }

@@ -2,7 +2,7 @@
 var mongoose = require('mongoose');
 
 // Setup schema
-var modulSchema = mongoose.Schema({
+var subjectSchema = mongoose.Schema({
   name: {
     type: String,
     required: true
@@ -25,6 +25,6 @@ var modulSchema = mongoose.Schema({
   }
 });
 
-var Modul = mongoose.model('Modul', modulSchema);
+var Subject = mongoose.model('Subject', subjectSchema);
 
-module.exports = Modul
+module.exports = Subject

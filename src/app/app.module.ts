@@ -8,29 +8,33 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
-import { TimetableComponent } from './components/timetable/timetable.component';
+import { TimetableComponent } from './pages/timetable/timetable.component';
 import { HeaderComponent } from './components/header/header.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { ScheduleComponent } from './pages/schedule/schedule.component';
-import { AdminComponent } from './pages/admin/admin.component';
 import { EventComponent } from './components/event/event.component';
 import { EventStackComponent } from './components/eventStack/event-stack.component';
-import { LoginComponent } from './pages/login/login.component';
 import { FormComponent } from './components/form/form.component';
-import { UsersService } from './services/users.service';
 import { DateSelectionComponent } from './components/date-selection/date-selection.component';
 import { CalendarComponent } from './components/calendar/calendar.component';
-import { ModuleComponent } from './pages/module/module.component';
 import { InfoComponent } from './components/info/info.component';
 import { PopupComponent } from './components/popup/popup.component';
 import { TimeComponent } from './components/time/time.component';
+
+// Pages
+import { ScheduleComponent } from './pages/schedule/schedule.component';
+import { AdminComponent } from './pages/admin/admin.component';
+import { LoginComponent } from './pages/login/login.component';
+import { SubjectComponent } from './pages/subject/subject.component';
+
+// Services
+import { UsersService } from './services/users.service';
+import { AuthGuardService } from './services/auth-guard.service'
+
 @NgModule({
     declarations: [
         AppComponent,
         NavigationComponent,
         TimetableComponent,
         HeaderComponent,
-        FooterComponent,
         ScheduleComponent,
         AdminComponent,
         EventComponent,
@@ -39,7 +43,7 @@ import { TimeComponent } from './components/time/time.component';
         FormComponent,
         DateSelectionComponent,
         CalendarComponent,
-        ModuleComponent,
+        SubjectComponent,
         InfoComponent,
         PopupComponent,
         TimeComponent,
@@ -50,7 +54,7 @@ import { TimeComponent } from './components/time/time.component';
         AppRoutingModule,
         FormsModule
     ],
-    providers: [UsersService],
+    providers: [UsersService, AuthGuardService],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild, HostListener } from '@angular/core';
 import { WeekDays } from 'src/app/models/date';
 import { BreakPoint } from 'src/app/models/responsive';
-import { Event } from 'src/app/models/event';
+import { Event, EventType } from 'src/app/models/event';
 
 @Component({
   selector: 'app-timetable',
@@ -15,7 +15,7 @@ export class TimetableComponent implements OnInit {
     {
       name: "Structuri de Date si Algoritmi",
       abbreviation: "SDA",
-      type: 'course',
+      type: EventType.Course,
       teacher: "M. Ionescu",
       day: "Monday",
       starts: { hour: 8, minutes: 30 },
@@ -25,7 +25,7 @@ export class TimetableComponent implements OnInit {
     {
       name: "Tehnologii Calculatoare",
       abbreviation: "TC",
-      type: 'course',
+      type: EventType.Course,
       teacher: "M. Ionescu",
       day: "Friday",
       starts: { hour: 8, minutes: 30 },
@@ -35,7 +35,7 @@ export class TimetableComponent implements OnInit {
     {
       name: "Măsurări în Electronică și Telecomunicații",
       abbreviation: "METc",
-      type: 'course',
+      type: EventType.Course,
       teacher: "M. Ionescu",
       day: "Tuesday",
       starts: { hour: 9, minutes: 30 },
@@ -64,7 +64,7 @@ export class TimetableComponent implements OnInit {
     {
       name: "Grafică Inginerească și Desen Tehnic",
       abbreviation: "Grafica",
-      type: 'course',
+      type: EventType.Course,
       teacher: "M. Ionescu",
       day: "Tuesday",
       starts: { hour: 13, minutes: 0 },
@@ -74,7 +74,7 @@ export class TimetableComponent implements OnInit {
     {
       name: "TRAR",
       abbreviation: "TRAR",
-      type: 'course',
+      type: EventType.Course,
       teacher: "M. Ionescu",
       day: "Tuesday",
       starts: { hour: 17, minutes: 30 },
@@ -97,6 +97,7 @@ export class TimetableComponent implements OnInit {
 
   constructor() {
     this.days = Object.keys(WeekDays).slice(Object.keys(WeekDays).length / 2);
+    console.log(Object.keys(WeekDays))
     this.orderedEvents = this.eventsOrderedByTime(this.events);
   }
 

@@ -1,12 +1,12 @@
-<div class="module">
-  <h1 class="module__title">{{module.name}}</h1>
-  <p class="module__author">{{module.teacher}}</p>
+<div class="subject">
+  <h1 class="subject__title">{{subject.name}}</h1>
+  <p class="subject__author">{{subject.teacher}}</p>
   <div class="modify">
-    <p class="module__description">{{module.description}}</p>
-    <ng-container *ngTemplateOutlet="modify;context:{item: module, type:'module'}"></ng-container>
+    <p class="subject__description">{{subject.description}}</p>
+    <ng-container *ngTemplateOutlet="modify;context:{item: subject, type:'subject'}"></ng-container>
   </div>
-  <ul class="module__lessons">
-    <li class="lesson" *ngFor="let lesson of module.lessons, let i = index">
+  <ul class="subject__lessons">
+    <li class="lesson" *ngFor="let lesson of subject.lessons, let i = index">
       <div class="modify">
         <h2 class="lesson__title">{{lesson.nr}}. {{lesson.title}}</h2>
         <ng-container *ngTemplateOutlet="modify;context:{item: lesson, type:'lesson'}"></ng-container>

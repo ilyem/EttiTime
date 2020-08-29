@@ -4,6 +4,7 @@ import { map } from 'rxjs/operators';
 import { Router } from '@angular/router';
 
 export const url = "http://localhost:3000"
+
 export class UserDetails {
   _id: string;
   email: string;
@@ -14,7 +15,7 @@ class TokenResponse {
   token: string;
 }
 
-export class TokenPayload {
+export class User {
   email: string;
   password: string;
 }
@@ -30,14 +31,14 @@ export class UsersService {
     this.token = token;
   }
 
-  private getToken(): string {
+  public getToken(): string {
     if (!this.token) {
       this.token = localStorage.getItem('token');
     }
     return this.token;
   }
 
-  private request(method: 'post' | 'get', type: 'login', user?: TokenPayload): Promise<any> {
+  private request(method: 'post' | 'get', type: 'login', user?: User): Promise<any> {
     let base;
 
     if (method === 'post') {
@@ -58,7 +59,7 @@ export class UsersService {
     return request.toPromise();
   }
 
-  public login(user: TokenPayload): Promise<any> {
+  public login(user: User): Promise<any> {
     return this.request('post', 'login', user);
   }
 

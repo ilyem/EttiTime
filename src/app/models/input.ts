@@ -1,4 +1,4 @@
-import Module from './module';
+import Subject from './subject';
 import { Lesson, Attachment } from './event';
 
 export default class FormInput {
@@ -37,9 +37,10 @@ export const loginInputs: FormInput[] = [
         required: true
     }
 ]
-export const moduleInputs = (module: Module): FormInput[] => {
+export const subjectInputs = (module: Subject): FormInput[] => {
     return [
         {
+            label: "description",
             name: "description",
             type: "text",
             placeholder: "Enter your module description",
@@ -50,6 +51,7 @@ export const moduleInputs = (module: Module): FormInput[] => {
 export const lessonInputs = (lesson: Lesson): FormInput[] => {
     let inputs: FormInput[] = [
         {
+            label: "title",
             name: "title",
             type: "text",
             placeholder: "Enter your lesson title",
@@ -59,6 +61,7 @@ export const lessonInputs = (lesson: Lesson): FormInput[] => {
     ]
     if (lesson.description) {
         inputs.push({
+            label: "description",
             name: "description",
             type: "text",
             placeholder: "Enter your lesson description",
@@ -70,6 +73,7 @@ export const lessonInputs = (lesson: Lesson): FormInput[] => {
 export const attachmentInputs = (attachment: Attachment): FormInput[] => {
     return [
         {
+            label: "name",
             name: "name",
             type: "text",
             placeholder: "Enter your attachment name",
@@ -77,6 +81,7 @@ export const attachmentInputs = (attachment: Attachment): FormInput[] => {
             required: true
         },
         {
+            label: "link",
             name: "link",
             type: "text",
             placeholder: "Enter your attachment link",
@@ -84,4 +89,4 @@ export const attachmentInputs = (attachment: Attachment): FormInput[] => {
             required: true
         }
     ]
-};
+}

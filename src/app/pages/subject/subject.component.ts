@@ -1,9 +1,11 @@
 import { Component, OnInit, Input, ViewChild } from '@angular/core';
 import { Lesson, Attachment } from 'src/app/models/event';
-import FormInput, { lessonInputs, moduleInputs, attachmentInputs } from 'src/app/models/input';
+import FormInput, { lessonInputs, subjectInputs, attachmentInputs } from 'src/app/models/input';
 import { FormGroup } from '@angular/forms';
 import { PopupComponent } from 'src/app/components/popup/popup.component';
-export const modul = {
+import { ActivatedRoute } from '@angular/router';
+
+export const subject = {
   name: "Modul 1",
   teacher: "Vlad Grosu",
   description: "dsknfkjsfnkjfnsekjfnekjfenkjef",
@@ -43,25 +45,27 @@ export const modul = {
 
 @Component({
   selector: 'app-module',
-  templateUrl: './module.component.html',
-  styleUrls: ['./module.component.scss']
+  templateUrl: './subject.component.html',
+  styleUrls: ['./subject.component.scss']
 })
-export class ModuleComponent implements OnInit {
-  module = modul;
+export class SubjectComponent implements OnInit {
+  subject = subject;
+  id: string;
   inputs: FormInput[];
   submitText: string = "save";
   showPopup: boolean = false;
   currentContext: any
   @ViewChild(PopupComponent) popup: PopupComponent;
-  constructor() { }
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
-    console.log(this.module);
-  }
+    this.id = this.route.snapshot.paramMap.get("id");
+
+  };
   toModify(item, type) {
     switch (type) {
-      case 'module':
-        return moduleInputs(item)
+      case 'subject':
+        return subjectInputs(item)
       case 'attachment':
         return attachmentInputs(item)
       case 'lesson':
@@ -69,7 +73,7 @@ export class ModuleComponent implements OnInit {
     }
   }
 
-  onSubmit(formValues, type) {
+  onSubmit(formValues, type: String) {
     console.log(formValues);
     Object.keys(formValues).forEach(key => {
       this.currentContext.item[key] = formValues[key];

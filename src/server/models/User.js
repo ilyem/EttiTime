@@ -11,7 +11,7 @@ var userSchema = mongoose.Schema({
   },
   type: {
     type: String,
-    enum: ['student', 'teacher'],
+    enum: ['student', 'teacher', 'admin'],
     required: true
   },
   email: {
@@ -26,10 +26,10 @@ var userSchema = mongoose.Schema({
   token: {
     type: String,
   },
-  group: {
-    type: String,
-    required: function () { return this.type === "student" }
-  },
+  // group: {
+  //   type: String,
+  //   required: function () { return this.type === "student" }
+  // },
 });
 
 
@@ -41,11 +41,11 @@ userSchema.statics.findByCredentials = async (email, password) => {
   // Search for a user by email and password.
   const user = await User.findOne({ email });
   if (!user) {
-    throw Error('Invalid login credentials')
+    throw Error('Invalid login email')
   }
   const cryptPassword = utils.crypt(password);
   if (cryptPassword !== user.password) {
-    throw Error('Invalid login credentials')
+    throw Error('Invalid login password')
   }
   return user
 }

@@ -1,14 +1,13 @@
-export enum EVENTS {
-  LESSON = "lesson",
-  SEMINAR = "seminar",
-  LABROATORY = "laboratory",
-  PROJECT = "project",
-  EXAM = "exam"
+export enum EventType {
+  Course = "course",
+  Seminar = "seminar",
+  Labroatory = "laboratory",
+  Project = "project",
 }
 export class Event {
   name: string;
   abbreviation: string;
-  type: string;
+  type: EventType;
   teacher: string;
   day: string;
   lesson?: Lesson
@@ -16,9 +15,7 @@ export class Event {
   ends: Time;
   classroom?: string;
   attachments: Attachment[];
-  exam?: {
-    attachments: Attachment[]
-  }
+  exam?: boolean
 }
 export class Attachment {
   name: string;

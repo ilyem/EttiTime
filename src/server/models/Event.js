@@ -22,12 +22,12 @@ var eventSchema = mongoose.Schema({
         },
         required: true
     },
-    modul: {
+    subject: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Modul'
+        ref: 'Subject'
     },
     classroom: {
-        type: String
+        type: String,
     },
     occurance: {
         type: String,

@@ -12,7 +12,6 @@ exports.index = async (req, res) => {
 // Handle create event actions
 exports.new = function (req, res) {
   var event = new Event({ ...req.body });
-  console.log(event);
   // save the event and check for errors
   event.save(function (err) {
     // Check for validation error
@@ -36,7 +35,7 @@ exports.view = function (req, res) {
   });
 };
 // Handle view event info
-exports.viewUserEvents = function (req, res) {
+exports.viewTeacherEvents = function (req, res) {
   Event.find({ teacher: req.params.user_id }, function (err, events) {
     if (err)
       res.send(err);
