@@ -27,7 +27,8 @@ import { SubjectComponent } from './pages/subject/subject.component';
 
 // Services
 import { UsersService } from './services/users.service';
-import { AuthGuardService } from './services/auth-guard.service'
+import { AuthGuardService } from './services/auth-guard.service';
+import { IconComponent } from './components/icon/icon.component'
 
 @NgModule({
     declarations: [
@@ -47,6 +48,7 @@ import { AuthGuardService } from './services/auth-guard.service'
         InfoComponent,
         PopupComponent,
         TimeComponent,
+        IconComponent,
     ],
     imports: [
         BrowserModule,

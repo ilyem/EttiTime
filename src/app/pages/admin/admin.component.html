@@ -1,22 +1,18 @@
-<app-navigation></app-navigation>
-<div class="stacks">
-  <ng-container *ngFor="let event of events; index as i">
-    <app-event [event]="event"></app-event>
-  </ng-container>
-</div>
 <div class="container">
-  <div class="timelines">
-    <h2>Timelines</h2>
-    <ng-container *ngTemplateOutlet="modify;context:{item: lesson, type:'lesson'}"></ng-container>
-
-    <div>
-      <p>Courses</p>
+  <div class="table">
+    <p class="title">
+      Timeline
+    </p>
+    <div class="line">
+      <p class="name">Courses</p>
+      <div class="details">Details </div>
+      <div class="actions">
+        <app-icon type='pen' (click)="onEdit()"></app-icon>
+      </div>
     </div>
   </div>
-  <div class="subjects"></div>
-  <div class="events"></div>
 </div>
-<ng-template #modify let-item="item" let-type="type" let-inputs="item.context.inputs"
-  let-submitText="item.context.submitText" let-type="item.context.type">
-  <img class="modify__icon" src="assets/pen.svg" (click)="setForm(item, type)" alt="">
-</ng-template>
+<app-popup [show]="false">
+  <app-form [inputs]="inputs" [submitText]="submitText" (formSubmit)="onSubmit($event)">
+  </app-form>
+</app-popup>

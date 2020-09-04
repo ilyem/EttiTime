@@ -1,13 +1,12 @@
-/* You can add global styles to this file, and also import other style files */
-@import "../node_modules/bootstrap/scss/bootstrap.scss";
-
 $lightGreen: #95cfa2;
 $darkGreen: #31ca52;
 
-html, body {
+html,
+body {
   height: 100%;
 }
-input, button {
+input,
+button {
   padding: 0;
   border: 0;
   margin: 0;
@@ -18,15 +17,14 @@ input {
 }
 button {
   cursor: pointer;
-
 }
 ul {
   list-style: none;
 }
 .lightGreen {
-    background-color: $lightGreen;
+  background-color: $lightGreen;
 }
 
 .darkGreen {
-    background-color: $darkGreen;
+  background-color: $darkGreen;
 }

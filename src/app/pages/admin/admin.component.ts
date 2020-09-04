@@ -88,8 +88,7 @@ export class AdminComponent implements OnInit {
   breakPoint = BreakPoint;
   rowHeight = 25;
   date: Date = new Date();
-
-
+  my: any
   @ViewChild('scheduleHeader') scheduleHeader;
   @HostListener('window:resize')
   onResize() {
@@ -123,6 +122,8 @@ export class AdminComponent implements OnInit {
     })
     return orderedEvents;
   }
-
+  onEdit() {
+    console.log('edit')
+  }
 }
 

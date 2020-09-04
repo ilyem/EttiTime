@@ -1,9 +1,14 @@
 <div class="container">
   <form class="form" #generalForm="ngForm" (ngSubmit)="onSubmit(generalForm.value)">
     <ng-container *ngFor="let input of inputs">
-      <label class="form__label" for="input.name">{{input.label}}</label>
-      <input [readonly]="input.readonly" [required]="input.required" class="form__input" [name]="input.name"
-        [(ngModel)]="input.value" [type]="input.type" [placeholder]="input.placeholder">
+      <ng-container *ngIf="input.type !== 'select'">
+        <label class="form__label" for="input.name">{{input.label}}</label>
+        <input [readonly]="input.readonly" [required]="input.required" class="form__input" [name]="input.name"
+          [(ngModel)]="input.value" [type]="input.type" [placeholder]="input.placeholder">
+      </ng-container>
+      <ng-container *ngIf="input.type === 'select'">
+        select is here
+      </ng-container>
     </ng-container>
     <button [disabled]="!generalForm.form.valid" class="form__button" type="submit">{{submitText}}</button>
   </form>

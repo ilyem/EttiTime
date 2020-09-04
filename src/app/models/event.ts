@@ -15,7 +15,6 @@ export class Event {
   ends: Time;
   classroom?: string;
   attachments: Attachment[];
-  exam?: boolean
 }
 export class Attachment {
   name: string;

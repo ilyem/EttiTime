@@ -45,9 +45,9 @@ router.route('/subjects')
     .post(authenticate, subjectController.new);
 
 router.route('/subjects/:subject_id')
-    .get(authenticate, subjectController.view)
-    .put(authenticate, subjectController.update)
-    .delete(authenticate, subjectController.delete);
+    .get(subjectController.view)
+    .put(subjectController.update)
+    .delete(subjectController.delete);
 
 //Module routes
 router.route('/timelines')

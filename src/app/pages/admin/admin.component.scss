@@ -23,3 +23,12 @@
     display: flex;
     overflow-x: scroll;
 }
+.container {
+    .line {
+        display: flex;
+        border: 1px solid;
+        .details {
+            flex-grow: 1;
+        }
+    }
+}

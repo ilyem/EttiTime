@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-popup',
@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./popup.component.scss']
 })
 export class PopupComponent {
-  show: boolean
+  @Input() show: boolean = false;
 
   togglePopup() {
     this.show = !this.show

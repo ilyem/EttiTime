@@ -1,6 +1,14 @@
 import Subject from './subject';
 import { Lesson, Attachment } from './event';
 
+export enum Models {
+    Subject = "subject",
+    Attachment = "attachment",
+    Lesson = "lesson",
+    Timeline = "timeline",
+    Event = "event"
+}
+
 export default class FormInput {
     label?: string;
     name: string;
@@ -37,14 +45,14 @@ export const loginInputs: FormInput[] = [
         required: true
     }
 ]
-export const subjectInputs = (module: Subject): FormInput[] => {
+export const subjectInputs = ({ description = '' }: Subject): FormInput[] => {
     return [
         {
             label: "description",
             name: "description",
             type: "text",
             placeholder: "Enter your module description",
-            value: module.description,
+            value: description,
             required: true
         }]
 }
@@ -89,4 +97,117 @@ export const attachmentInputs = (attachment: Attachment): FormInput[] => {
             required: true
         }
     ]
+}
+export const eventInputs = (event: Event): FormInput[] => {
+    return [
+        {
+            label: "subject",
+            name: "subject",
+            type: "select",
+            placeholder: "Enter the related subject",
+            value: '',
+            required: true
+        },
+        {
+            label: "type",
+            name: "type",
+            type: "select",
+            placeholder: "Enter the event type",
+            value: '',
+            required: true
+        },
+        {
+            label: "hour",
+            name: "hour",
+            type: "select",
+            placeholder: "Enter the event start hour",
+            value: '',
+            required: true
+        },
+        {
+            label: "minutes",
+            name: "minutes",
+            type: "select",
+            placeholder: "Enter the event start minutes",
+            value: '',
+            required: true
+        },
+        {
+            label: "hour",
+            name: "hour",
+            type: "select",
+            placeholder: "Enter the event end hour",
+            value: '',
+            required: true
+        },
+        {
+            label: "minutes",
+            name: "minutes",
+            type: "select",
+            placeholder: "Enter the event end minutes",
+            value: '',
+            required: true
+        },
+        {
+            label: "hour",
+            name: "hour",
+            type: "select",
+            placeholder: "Enter the event start hour",
+            value: '',
+            required: true
+        },
+        {
+            label: "classroom",
+            name: "classroom",
+            type: "text",
+            placeholder: "Enter the event classroom name",
+            value: '',
+            required: true
+        },
+        {
+            label: "hour",
+            name: "hour",
+            type: "select",
+            placeholder: "Enter the event start hour",
+            value: '',
+            required: true
+        }
+    ]
+}
+// TODO
+export const timelineInputs = ({ name = '', link = '' }: Attachment): FormInput[] => {
+
+    return [
+        {
+            label: "name",
+            name: "name",
+            type: "text",
+            placeholder: "Enter your attachment name",
+            value: name,
+            required: true
+        },
+        {
+            label: "link",
+            name: "link",
+            type: "text",
+            placeholder: "Enter your attachment link",
+            value: link,
+            required: true
+        }
+    ]
+}
+
+export const getObjectInputs = (item, type: Models) => {
+
+    switch (type) {
+        case Models.Subject:
+            return subjectInputs(item)
+        case Models.Attachment:
+            return attachmentInputs(item)
+        case Models.Lesson:
+            return lessonInputs(item)
+        case Models.Event:
+            return eventInputs(item)
+
+    }
 }
